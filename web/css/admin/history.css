@@ -1,0 +1,71 @@
+body {
+    margin: 0 auto;
+    width: 90%;
+}
+
+#heading {
+    text-align: center;
+}
+
+#input-area {
+    margin-bottom: 10px;
+}
+
+#text-area {
+    width: 99%;
+}
+
+#notes-container {
+    margin-top: 20px;
+}
+
+.note {
+    margin: 10px 0 20px 0;
+    -webkit-box-shadow: 0 0 20px;
+    -moz-box-shadow: 0 0 20px;
+    box-shadow: 0 0 20px;
+    opacity: 0.5;
+    transition-property: opacity;
+    transition-duration: 1s;
+    transition-delay: .1s;
+    transition-timing-function: linear;
+}
+
+.note:hover {
+    opacity: 1;
+}
+
+.note p {
+    margin: 10px;
+}
+
+.note-controls {
+    margin-top: 15px;
+    margin-botton: 10px;
+    text-align: right;
+}
+
+.note,
+.note-controls span {
+    border: 1px solid black;
+}
+
+.note-controls span {
+    margin: 5px;
+    padding: 10px;
+    width: 20px;
+    height: 20px;
+    box-shadow: 1px 1px 0 black;
+}
+
+#delete-button {
+    height: 25px;
+    width: 25px;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.note-controls span,
+#delete-button {
+    cursor: pointer;
+}

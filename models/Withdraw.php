@@ -1,0 +1,76 @@
+<?php
+
+namespace app\models;
+
+use Yii;
+
+/**
+ * This is the model class for table "withdraw".
+ *
+ * @property int $withdraw
+ * @property int $user_id
+ * @property int $product_id
+ * @property int $date_now
+ * @property int $select_date
+ * @property int $quantity
+ * @property string $description
+ *
+ * @property User $user
+ * @property Product $product
+ */
+class Withdraw extends \yii\db\ActiveRecord
+{
+    /**
+     * {@inheritdoc}
+     */
+    public static function tableName()
+    {
+        return 'withdraw';
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function rules()
+    {
+        return [
+            [['user_id', 'product_id', 'date_now', 'select_date', 'quantity', 'description'], 'required'],
+            [['user_id', 'product_id', 'date_now', 'select_date', 'quantity'], 'integer'],
+            [['description'], 'string', 'max' => 250],
+            [['user_id'], 'exist', 'skipOnError' => true, 'targetClass' => User::className(), 'targetAttribute' => ['user_id' => 'user_id']],
+            [['product_id'], 'exist', 'skipOnError' => true, 'targetClass' => Product::className(), 'targetAttribute' => ['product_id' => 'product_id']],
+        ];
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function attributeLabels()
+    {
+        return [
+            'withdraw_id' => 'Withdraw_id',
+            'user_id' => 'User ID',
+            'product_id' => 'Product ID',
+            'date_now' => 'Date Now',
+            'select_date' => 'Select Date',
+            'quantity' => 'Quantity',
+            'description' => 'Description',
+        ];
+    }
+
+    /**
+     * @return \yii\db\ActiveQuery
+     */
+    public function getUser()
+    {
+        return $this->hasOne(User::className(), ['user_id' => 'user_id']);
+    }
+
+    /**
+     * @return \yii\db\ActiveQuery
+     */
+    public function getProduct()
+    {
+        return $this->hasOne(Product::className(), ['product_id' => 'product_id']);
+    }
+}

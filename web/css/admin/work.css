@@ -1,0 +1,74 @@
+.cc-selector input {
+    margin: 0;
+    padding: 0;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+}
+
+.how-we-work-1 {
+    background-image: url('/siteIcons/how-we-work-1.svg');
+}
+
+.how-we-work-2 {
+    background-image: url('/siteIcons/how-we-work-2.svg');
+}
+
+.how-we-work-3 {
+    background-image: url('/siteIcons/how-we-work-3.svg');
+}
+
+.how-we-work-4 {
+    background-image: url('/siteIcons/how-we-work-4.svg');
+}
+
+.how-we-work-5 {
+    background-image: url('/siteIcons/how-we-work-5.svg');
+}
+
+.how-we-work-6 {
+    background-image: url('/siteIcons/how-we-work-6.svg');
+}
+
+.cc-selector input:active + .drinkcard-cc {
+    opacity: .9;
+}
+
+.cc-selector input:checked + .drinkcard-cc {
+    -webkit-filter: none;
+    -moz-filter: none;
+    filter: none;
+}
+
+.drinkcard-cc {
+    cursor: pointer;
+    background-size: contain;
+    background-repeat: no-repeat;
+    display: inline-block;
+    width: 100px;
+    height: 70px;
+    -webkit-transition: all 100ms ease-in;
+    -moz-transition: all 100ms ease-in;
+    transition: all 100ms ease-in;
+    -webkit-filter: brightness(1.8) grayscale(1) opacity(.7);
+    -moz-filter: brightness(1.8) grayscale(1) opacity(.7);
+    filter: brightness(1.8) grayscale(1) opacity(.7);
+}
+
+.drinkcard-cc:hover {
+    -webkit-filter: brightness(1.2) grayscale(.5) opacity(.9);
+    -moz-filter: brightness(1.2) grayscale(.5) opacity(.9);
+    filter: brightness(1.2) grayscale(.5) opacity(.9);
+}
+
+/* Extras */
+
+a {
+    color: #444;
+    text-decoration: none;
+}
+
+p {
+    margin-bottom: .3em;
+}
+
